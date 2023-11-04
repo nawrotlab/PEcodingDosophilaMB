@@ -25,7 +25,7 @@ def Model(Parameters):
         '''
 
     neuron_modelORN = dict()
-    neuron_modelORN['model'] = Equations(ORN_eqs, DeltaT=1 * mV, g_l=Parameters['gL'], E_l=Parameters['EL'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'], C_m=Parameters['C'],
+    neuron_modelORN['model'] = Equations(ORN_eqs, g_l=Parameters['gL'], E_l=Parameters['EL'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'], C_m=Parameters['C'],
     tau_e=Parameters['tau_syn_e'],tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
     neuron_modelORN['threshold'] = 'v > VT'
     neuron_modelORN['reset'] = '''v = Vr; g_Ia-=ORN_SFA'''  
@@ -43,7 +43,7 @@ def Model(Parameters):
         '''
 
     neuron_modelPN = dict()
-    neuron_modelPN['model'] = Equations(PN_eqs, DeltaT=1 * mV, g_l=Parameters['gLPN'], E_l=Parameters['ELPN'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],C_m=Parameters['CPN'],
+    neuron_modelPN['model'] = Equations(PN_eqs, g_l=Parameters['gLPN'], E_l=Parameters['ELPN'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],C_m=Parameters['CPN'],
                                         tau_e=Parameters['tau_syn_e'], tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
     neuron_modelPN['threshold'] = 'v > VTPN'
     neuron_modelPN['reset'] = 'v = VrPN'
@@ -61,7 +61,7 @@ def Model(Parameters):
        '''
 
     neuron_modelLN = dict()
-    neuron_modelLN['model'] = Equations(LN_eqs, DeltaT=1 * mV, g_l=Parameters['gLPN'], E_l=Parameters['ELLN'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
+    neuron_modelLN['model'] = Equations(LN_eqs, g_l=Parameters['gLPN'], E_l=Parameters['ELLN'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
                                         C_m=Parameters['CLN'], tau_e=Parameters['tau_syn_e'], tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
     neuron_modelLN['threshold'] = 'v > VTLN'
     neuron_modelLN['reset'] = 'v = VrLN'
@@ -81,7 +81,7 @@ def Model(Parameters):
         '''
 
     neuron_modelKC = dict()
-    neuron_modelKC['model'] = Equations(KC_eqs, DeltaT=1 * mV, g_l=Parameters['gLKC'], E_l=Parameters['ELKC'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
+    neuron_modelKC['model'] = Equations(KC_eqs, g_l=Parameters['gLKC'], E_l=Parameters['ELKC'], E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
                                         C_m=Parameters['CKC'],tau_e=Parameters['tau_syn_e'], tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
     neuron_modelKC['threshold'] = 'v > VTKC'
     neuron_modelKC['reset'] = '''v = VrKC; g_Ia-=KC_SFA '''
@@ -103,7 +103,7 @@ def Model(Parameters):
 
 
     neuron_modelMBON = dict()
-    neuron_modelMBON['model'] = Equations(MBON_eqs, DeltaT=1 * mV, g_l=Parameters['gL'], E_l=Parameters['EL'],
+    neuron_modelMBON['model'] = Equations(MBON_eqs, g_l=Parameters['gL'], E_l=Parameters['EL'],
                                         E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
                                         C_m=Parameters['CMBON'], tau_e=Parameters['tau_syn_e'],
                                         tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
@@ -121,7 +121,7 @@ def Model(Parameters):
            '''
 
     neuron_modelMBON_LN = dict()
-    neuron_modelMBON_LN['model'] = Equations(MBON_LN_eqs, DeltaT=1 * mV, g_l=Parameters['gL'], E_l=Parameters['EL'],
+    neuron_modelMBON_LN['model'] = Equations(MBON_LN_eqs, g_l=Parameters['gL'], E_l=Parameters['EL'],
                                           E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
                                           C_m=Parameters['C'], tau_e=Parameters['tau_syn_e'],
                                           tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
@@ -141,7 +141,7 @@ def Model(Parameters):
         '''
 
     neuron_modelMBIN = dict()
-    neuron_modelMBIN['model'] = Equations(MBIN_eqs, DeltaT=1 * mV, g_l=Parameters['gL'], E_l=Parameters['EL'],
+    neuron_modelMBIN['model'] = Equations(MBIN_eqs, g_l=Parameters['gL'], E_l=Parameters['EL'],
                                         E_e=Parameters['Ee'], E_i=Parameters['Ei'], E_Ia=Parameters['EIa'],
                                         C_m=Parameters['C'], tau_e=Parameters['tau_syn_e'],
                                         tau_i=Parameters['tau_syn_i'], tau_Ia=Parameters['tau_Ia'])
@@ -158,7 +158,7 @@ def Model(Parameters):
         '''
 
     neuron_modelAPL = dict()
-    neuron_modelAPL['model'] = Equations(APL_eqs, Delta=1*mV, g_l=Parameters['gL'],E_l=Parameters['EL'],
+    neuron_modelAPL['model'] = Equations(APL_eqs, g_l=Parameters['gL'],E_l=Parameters['EL'],
                                         E_e=Parameters['Ee'],E_i=Parameters['Ei'],C_m=Parameters['CAPL'],tau_e=Parameters['tau_syn_e'],
                                         tau_i=Parameters['tau_syn_i'])
     neuron_modelAPL['threshold'] = 'v > VTAPL'
