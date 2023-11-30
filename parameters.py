@@ -22,7 +22,7 @@ Parameters = dict(
     seed=None,  
     N=0,  # number of model instances 
     odor_baseline=185,  
-    gamma_shape = 10.0,
+    gamma_shape = 3.0,
     reinforcement_baseline=0.0001, 
 
     # sparseness mechanisms
